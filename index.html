@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Start Screen -->
+  <div class="screen" id="start-screen">
+    <h1>🧠 Memory Game</h1>
+
+    <div class="options">
+      <p>Select Difficulty:</p>
+      <div class="difficulty">
+        <button class="diff-btn" data-size="2">Easy (2x2)</button>
+        <button class="diff-btn" data-size="4">Medium (4x4)</button>
+        <button class="diff-btn" data-size="6">Hard (6x6)</button>
+      </div>
+
+      <p>Select Theme:</p>
+      <div class="themes">
+        <button class="theme-btn" data-theme="emoji">🍎 Emojis</button>
+        <button class="theme-btn" data-theme="animals">🐶 Animals</button>
+        <button class="theme-btn" data-theme="flags">🌍 Flags</button>
+      </div>
+    </div>
+
+    <button id="dark-toggle">🌙 Dark Mode</button>
+    <button id="music-toggle">🎵 Music On/Off</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div class="screen hidden" id="game-screen">
+    <header>
+      <div class="stats">
+        <p>Moves: <span id="moves">0</span></p>
+        <p>Time: <span id="timer">0</span>s</p>
+        <p>Rating: <span id="stars">⭐⭐⭐</span></p>
+      </div>
+      <button id="restart-btn">🔄 Restart</button>
+    </header>
+    <div class="game-board" id="game-board"></div>
+  </div>
+
+  <!-- Win Screen -->
+  <div class="screen hidden" id="win-screen">
+    <h1>🎉 You Win!</h1>
+    <p>You finished in <span id="final-time"></span> seconds</p>
+    <p>Moves taken: <span id="final-moves"></span></p>
+    <p>Your rating: <span id="final-stars"></span></p>
+
+    <h2>🏆 Leaderboard</h2>
+    <ul id="leaderboard"></ul>
+
+    <button id="play-again-btn">Play Again</button>
+  </div>
+
+  <!-- Confetti -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
